@@ -1,9 +1,14 @@
-# api documentation for  [babel-plugin-lodash (v3.2.11)](https://github.com/lodash/babel-plugin-lodash#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-lodash.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-lodash) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash)
+# npmdoc-babel-plugin-lodash
+
+#### api documentation for  [babel-plugin-lodash (v3.2.11)](https://github.com/lodash/babel-plugin-lodash#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-lodash.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-lodash) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash)
+
 #### Modular Lodash builds without the hassle.
 
-[![NPM](https://nodei.co/npm/babel-plugin-lodash.png?downloads=true)](https://www.npmjs.com/package/babel-plugin-lodash)
+[![NPM](https://nodei.co/npm/babel-plugin-lodash.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/babel-plugin-lodash)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-babel-plugin-lodash_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-babel-plugin-lodash/build/screenCapture.npmPackageListing.svg)
 
@@ -18,7 +23,6 @@
 {
     "author": {
         "name": "Graeme Yeates",
-        "email": "megawac@gmail.com",
         "url": "https://github.com/megawac"
     },
     "bugs": {
@@ -27,12 +31,10 @@
     "contributors": [
         {
             "name": "Graeme Yeates",
-            "email": "megawac@gmail.com",
             "url": "https://github.com/megawac"
         },
         {
             "name": "John-David Dalton",
-            "email": "john.david.dalton@gmail.com",
             "url": "http://allyoucanleet.com/"
         }
     ],
@@ -88,17 +90,14 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "jdalton",
-            "email": "john.david.dalton@gmail.com"
+            "name": "jdalton"
         },
         {
-            "name": "mathias",
-            "email": "mathias@qiwi.be"
+            "name": "mathias"
         }
     ],
     "name": "babel-plugin-lodash",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/lodash/babel-plugin-lodash.git"
@@ -110,36 +109,6 @@
     },
     "version": "3.2.11"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module babel-plugin-lodash](#apidoc.module.babel-plugin-lodash)
-1.  object <span class="apidocSignatureSpan">babel-plugin-lodash.</span>util
-
-#### [module babel-plugin-lodash.util](#apidoc.module.babel-plugin-lodash.util)
-1.  [function <span class="apidocSignatureSpan">babel-plugin-lodash.util.</span>normalizePath (pkgPath)](#apidoc.element.babel-plugin-lodash.util.normalizePath)
-
-
-
-# <a name="apidoc.module.babel-plugin-lodash"></a>[module babel-plugin-lodash](#apidoc.module.babel-plugin-lodash)
-
-
-
-# <a name="apidoc.module.babel-plugin-lodash.util"></a>[module babel-plugin-lodash.util](#apidoc.module.babel-plugin-lodash.util)
-
-#### <a name="apidoc.element.babel-plugin-lodash.util.normalizePath"></a>[function <span class="apidocSignatureSpan">babel-plugin-lodash.util.</span>normalizePath (pkgPath)](#apidoc.element.babel-plugin-lodash.util.normalizePath)
-- description and source-code
-```javascript
-function normalizePath(pkgPath) {
-  return (0, _toString3.default)(pkgPath).replace(/\\/g, '/');
-}
-```
-- example usage
-```shell
-n/a
 ```
 
 
