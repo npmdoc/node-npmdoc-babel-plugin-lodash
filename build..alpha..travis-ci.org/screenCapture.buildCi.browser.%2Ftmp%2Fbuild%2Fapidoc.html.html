@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/lodash/babel-plugin-lodash#readme"
-
-    >babel-plugin-lodash (v3.2.11)</a>
+    <a href="https://github.com/lodash/babel-plugin-lodash#readme">babel-plugin-lodash (v3.2.11)</a>
 </h1>
 <h4>Modular Lodash builds without the hassle.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-lodash">module babel-plugin-lodash</a><ol>
 
@@ -291,8 +284,8 @@
 
 
   var identifiers = {
-    &#x27;PLACEHOLDER&#x27;: types.identifier(&#x27;placeholder&#x27;),
-    &#x27;UNDEFINED&#x27;: types.identifier(&#x27;undefined&#x27;)
+    'PLACEHOLDER': types.identifier('placeholder'),
+    'UNDEFINED': types.identifier('undefined')
   };
 
 <span class="apidocCodeCommentSpan">  /**
@@ -338,7 +331,7 @@
       (0, _each3.default)(ids, function (id) {
         store.set(id);
         _mapping2.default.modules.get(id).forEach(function (value, key) {
-          store.set(id + &#x27;/&#x27; + key);
+          store.set(id + '/' + key);
         });
       });
 
@@ -350,7 +343,7 @@
         }
         var isLodash = pkgStore.isLodash();
         var specs = (0, _sortBy3.default)(module.specifiers, function (spec) {
-          return spec.imported == &#x27;default&#x27;;
+          return spec.imported == 'default';
         });
 
         (0, _each3.default)(specs, function (spec) {
@@ -359,14 +352,14 @@
 
           var binding = file.scope.getBinding(local);
           var _binding$path$parent$ = binding.path.parent.importKind,
-              importKind = _binding$path$parent$ === undefined ? &#x27;value&#x27; : _binding$path$parent$;
+              importKind = _binding$path$parent$ === undefined ? 'value' : _binding$path$parent$;
 
           // Skip type annotation specifiers.
 
-          if (importKind != &#x27;value&#x27;) {
+          if (importKind != 'value') {
             return;
           }
-          var isChain = isLodash &#x26;&#x26; imported == &#x27;chain&#x27;;
+          var isChain = isLodash &amp;&amp; imported == 'chain';
 
           (0, _each3.default)(binding.referencePaths, function (refPath) {
             var node = refPath.node,
@@ -374,8 +367,8 @@
             var type = node.type;
 
 
-            if (imported &#x26;&#x26; imported != &#x27;default&#x27;) {
-              if (isChain &#x26;&#x26; refPath.parentPath.isCallExpression()) {
+            if (imported &amp;&amp; imported != 'default') {
+              if (isChain &amp;&amp; refPath.parentPath.isCallExpression()) {
                 throw refPath.buildCodeFrameError(CHAIN_ERROR);
               }
 
@@ -385,7 +378,7 @@
               refPath.replaceWith({ type, name });
             } else if (parentPath.isMemberExpression()) {
               var key = refPath.parent.property.name;
-              if (isLodash &#x26;&#x26; key == &#x27;chain&#x27; &#x26;&#x26; parentPath.parentPath.isCallExpression()) {
+              if (isLodash &amp;&amp; key == 'chain' &amp;&amp; parentPath.parentPath.isCallExpression()) {
                 throw refPath.buildCodeFrameError(CHAIN_ERROR);
               }
 
@@ -395,7 +388,7 @@
               parentPath.replaceWith({ type, name: _name });
             } else if (isLodash) {
               var callee = getCallee(refPath);
-              if (callee &#x26;&#x26; callee.name == local) {
+              if (callee &amp;&amp; callee.name == local) {
                 throw refPath.buildCodeFrameError(CHAIN_ERROR);
               }
               refPath.replaceWith(callee ? types.memberExpression(callee, identifiers.PLACEHOLDER) : identifiers.UNDEFINED);
@@ -464,22 +457,22 @@
   if (!moduleRoot) {
     return _possibleConstructorReturn(_this);
   }
-  var pkgPath = _path2.default.join(moduleRoot, &#x27;package.json&#x27;);
-  var pkg = _fs2.default.existsSync(pkgPath) ? require(pkgPath) : { &#x27;main&#x27;: &#x27;index.js&#x27; };
+  var pkgPath = _path2.default.join(moduleRoot, 'package.json');
+  var pkg = _fs2.default.existsSync(pkgPath) ? require(pkgPath) : { 'main': 'index.js' };
   var mainPath = (0, _util.normalizePath)(_path2.default.dirname(_path2.default.resolve(moduleRoot, pkg.main)));
 
-  // Sort paths by the “main” entry first.
-  var dirPaths = (0, _orderBy3.default)(_glob2.default.sync(_path2.default.join(moduleRoot, &#x27;**/&#x27;), {
-    &#x27;ignore&#x27;: _path2.default.join(moduleRoot, &#x27;node_modules/**/&#x27;)
+  // Sort paths by the â€œmainâ€ entry first.
+  var dirPaths = (0, _orderBy3.default)(_glob2.default.sync(_path2.default.join(moduleRoot, '**/'), {
+    'ignore': _path2.default.join(moduleRoot, 'node_modules/**/')
   }), function (dirPath) {
     return (0, _startsWith3.default)(dirPath, mainPath);
-  }, [&#x27;desc&#x27;]);
+  }, ['desc']);
 
   (0, _each3.default)(dirPaths, function (dirPath) {
     var base = _path2.default.relative(moduleRoot, dirPath);
-    var filePaths = _glob2.default.sync(_path2.default.join(dirPath, &#x27;*.js&#x27;));
+    var filePaths = _glob2.default.sync(_path2.default.join(dirPath, '*.js'));
     var pairs = (0, _map3.default)(filePaths, function (filePath) {
-      var name = _path2.default.basename(filePath, &#x27;.js&#x27;);
+      var name = _path2.default.basename(filePath, '.js');
       return [name.toLowerCase(), name];
     });
     _this.set(base, new _MapCache3.default(pairs));
@@ -502,9 +495,9 @@
   _classCallCheck(this, Package);
 
   pkgPath = (0, _toString3.default)(pkgPath);
-  var parts = pkgPath.split(&#x27;/&#x27;);
+  var parts = pkgPath.split('/');
 
-  this.base = (0, _tail3.default)(parts).join(&#x27;/&#x27;);
+  this.base = (0, _tail3.default)(parts).join('/');
   this.id = parts[0];
   this.isLodash = (0, _constant3.default)(reLodash.test(this.id));
   this.path = pkgPath;
@@ -544,7 +537,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function config() {
-  var _ref = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : {},
+  var _ref = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : {},
       _ref$cwd = _ref.cwd,
       cwd = _ref$cwd === undefined ? process.cwd() : _ref$cwd,
       _ref$id = _ref.id,
@@ -674,22 +667,22 @@
   if (!moduleRoot) {
     return _possibleConstructorReturn(_this);
   }
-  var pkgPath = _path2.default.join(moduleRoot, &#x27;package.json&#x27;);
-  var pkg = _fs2.default.existsSync(pkgPath) ? require(pkgPath) : { &#x27;main&#x27;: &#x27;index.js&#x27; };
+  var pkgPath = _path2.default.join(moduleRoot, 'package.json');
+  var pkg = _fs2.default.existsSync(pkgPath) ? require(pkgPath) : { 'main': 'index.js' };
   var mainPath = (0, _util.normalizePath)(_path2.default.dirname(_path2.default.resolve(moduleRoot, pkg.main)));
 
-  // Sort paths by the “main” entry first.
-  var dirPaths = (0, _orderBy3.default)(_glob2.default.sync(_path2.default.join(moduleRoot, &#x27;**/&#x27;), {
-    &#x27;ignore&#x27;: _path2.default.join(moduleRoot, &#x27;node_modules/**/&#x27;)
+  // Sort paths by the â€œmainâ€ entry first.
+  var dirPaths = (0, _orderBy3.default)(_glob2.default.sync(_path2.default.join(moduleRoot, '**/'), {
+    'ignore': _path2.default.join(moduleRoot, 'node_modules/**/')
   }), function (dirPath) {
     return (0, _startsWith3.default)(dirPath, mainPath);
-  }, [&#x27;desc&#x27;]);
+  }, ['desc']);
 
   (0, _each3.default)(dirPaths, function (dirPath) {
     var base = _path2.default.relative(moduleRoot, dirPath);
-    var filePaths = _glob2.default.sync(_path2.default.join(dirPath, &#x27;*.js&#x27;));
+    var filePaths = _glob2.default.sync(_path2.default.join(dirPath, '*.js'));
     var pairs = (0, _map3.default)(filePaths, function (filePath) {
-      var name = _path2.default.basename(filePath, &#x27;.js&#x27;);
+      var name = _path2.default.basename(filePath, '.js');
       return [name.toLowerCase(), name];
     });
     _this.set(base, new _MapCache3.default(pairs));
@@ -717,9 +710,9 @@
   _classCallCheck(this, Package);
 
   pkgPath = (0, _toString3.default)(pkgPath);
-  var parts = pkgPath.split(&#x27;/&#x27;);
+  var parts = pkgPath.split('/');
 
-  this.base = (0, _tail3.default)(parts).join(&#x27;/&#x27;);
+  this.base = (0, _tail3.default)(parts).join('/');
   this.id = parts[0];
   this.isLodash = (0, _constant3.default)(reLodash.test(this.id));
   this.path = pkgPath;
@@ -769,7 +762,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function config() {
-  var _ref = arguments.length &#x3e; 0 &#x26;&#x26; arguments[0] !== undefined ? arguments[0] : {},
+  var _ref = arguments.length &gt; 0 &amp;&amp; arguments[0] !== undefined ? arguments[0] : {},
       _ref$cwd = _ref.cwd,
       cwd = _ref$cwd === undefined ? process.cwd() : _ref$cwd,
       _ref$id = _ref.id,
@@ -857,7 +850,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function normalizePath(pkgPath) {
-  return (0, _toString3.default)(pkgPath).replace(/\\/g, &#x27;/&#x27;);
+  return (0, _toString3.default)(pkgPath).replace(/\\/g, '/');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -871,3 +864,4 @@
     ]
 </div>
 </div>
+</body></html>
