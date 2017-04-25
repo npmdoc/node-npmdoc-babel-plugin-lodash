@@ -1,6 +1,6 @@
 # npmdoc-babel-plugin-lodash
 
-#### api documentation for  [babel-plugin-lodash (v3.2.11)](https://github.com/lodash/babel-plugin-lodash#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-lodash.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-lodash) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash)
+#### basic api documentation for  [babel-plugin-lodash (v3.2.11)](https://github.com/lodash/babel-plugin-lodash#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-lodash.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-lodash) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-lodash)
 
 #### Modular Lodash builds without the hassle.
 
@@ -107,7 +107,8 @@
         "prepublish": "npm run build",
         "test": "mocha --check-leaks --compilers js:babel-register"
     },
-    "version": "3.2.11"
+    "version": "3.2.11",
+    "bin": {}
 }
 ```
 
